@@ -15,6 +15,13 @@
         <input type="submit" value="Send">
     </form>
 
+    <?php
+
+    $userNumber = $_GET["number"];
+    // echo "il numero scelto dall'utente è $userNumber";
+    
+    ?>
+
 </body>
 
 </html>
