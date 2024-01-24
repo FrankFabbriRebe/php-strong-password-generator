@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password generatore</title>
+
+    <?php
+    require_once __DIR__ . "/partials/functions.php";
+    ?>
+
 </head>
 
 <body>
@@ -16,32 +21,9 @@
         <input type="submit" value="Generate Password">
     </form>
 
-    <?php
-
-    $userNumber = $_GET["number"];
-    // echo "User number is: $userNumber";
-    
-    // function to generate random psw
-    function generatePsw($userNumber)
-    {
-
-        // list of characters available
-        $charactersAvailable = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_';
-
-        $randomPsw = '';
-
-        for ($i = 0; $i < $userNumber; $i++) {
-            $randomPsw .= $charactersAvailable[rand(0, strlen($charactersAvailable) - 1)];
-        }
-
-        return $randomPsw;
-
-    }
-
-    echo generatePsw($userNumber);
-
-
-    ?>
+    <span>
+        <?php echo generatePsw($userNumber) ?>
+    </span>
 
 </body>
 
